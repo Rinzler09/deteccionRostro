@@ -7,7 +7,24 @@ def regresar():
     exit()
 
 
+def validarEmpleado(idEmpleado):
+    match idEmpleado:
+        case (202130060109 | 202110060173 | 201920060176 | 201920130058):
+            subprocess.Popen(['python', 'deteccionRostro\\reconocimiento.py'])
+            exit()
+        case _:
+            lblError.configure(fg="red")
+
+
+def getNumEmpleado():
+
+    entradaUser = int(txtNumEmpleado.get().strip())
+    validarEmpleado(entradaUser)
+    txtNumEmpleado.delete(0, tk.END)
+
+
 root = tk.Tk()
+
 root.title("Monitoreo de Empleados")
 window_height = 500
 window_width = 320
@@ -27,13 +44,19 @@ etiqueta.pack(pady=(20, 10))
 etiqueta2 = tk.Label(root, text="Ingrese su numero de empleado")
 etiqueta2.pack(pady=(20, 10))
 
-botonIngresar = tk.Button(root, text="Ingresar", bg="#05365c", fg="white", width=17,
-                          command=lambda: print("Boton 2"))
-botonIngresar.pack(pady=(20, 20))
+lblError = tk.Label(
+    root, text="El Empleado no esta registrado", fg="#F0F0F0")
+lblError.pack(pady=(20, 10))
+
+txtNumEmpleado = tk.Entry(root)
+txtNumEmpleado.pack(pady=20)
+
+botonIngresar = tk.Button(root, text="Ingresar", bg="#00FF00", fg="black", width=17,
+                          command=lambda: getNumEmpleado())
+botonIngresar.pack(side="left", padx=(100, 20))
 
 botonAtras = tk.Button(root, text="Atras", bg="#611504", fg="white",
                        width=17, command=lambda: regresar())
-botonAtras.pack(pady=(20, 20))
-
+botonAtras.pack(side="left", padx=20)
 
 root.mainloop()

@@ -4,7 +4,7 @@ import os
 import cv2
 import imutils
 
-personName = 'OsirisEscobar'
+personName = 'MiltonPaz'
 # Cambia a la ruta donde hayas almacenado Data
 dataPath = r'deteccionRostro\\empleadosGaleria'
 personPath = os.path.join(dataPath, personName)
@@ -13,11 +13,11 @@ if not os.path.exists(personPath):
     print('Carpeta creada: ', personPath)
     os.makedirs(personPath)
 # se utiliza la webcam para sacar las capturas de los rostros
-# cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
-videoPath = os.path.join(
-    'deteccionRostro\empleadosVideos', f'{personName}.mp4')
+cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+# videoPath = os.path.join(
+#     'deteccionRostro\empleadosVideos', f'{personName}.mp4')
 # se utiliza una ruta de video para detectar los rostros y sacar capturas
-cap = cv2.VideoCapture(videoPath)
+# cap = cv2.VideoCapture(videoPath)
 
 if not cap.isOpened():
     print("Error: No se pudo abrir el video")
