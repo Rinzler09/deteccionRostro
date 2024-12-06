@@ -3,6 +3,7 @@
 import mysql.connector
 from mysql.connector import Error
 
+#metodo de creacion de conexion base de datos
 def crear_conexion():
     try:
         connection = mysql.connector.connect(
