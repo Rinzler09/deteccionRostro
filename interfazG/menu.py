@@ -7,6 +7,10 @@ def monitoreoRostro():
     subprocess.Popen(['python', 'deteccionRostro\\interfazG\\validateUser.py'])
     exit()
 
+#Metodo de ejecucion del boton de manual de usuario
+def opcionesManualUsuarios():
+    subprocess.Popen(['python', 'deteccionRostro\\interfazG\\opcionesManual.py'])
+    exit()
 
 # CREACION DE VENTANA PRINCIPAL
 
@@ -37,7 +41,7 @@ botonRostros = tk.Button(root, text="Monitoreo de Rostros", bg="#05365c", fg="wh
 botonRostros.pack(pady=(30, 20))
 
 botonUsuario = tk.Button(root, text="Manual de Usuario", bg="#013d24", fg="white", width=17,
-                         command=lambda: print("Boton 2"))
+                         command=lambda: opcionesManualUsuarios())
 botonUsuario.pack(pady=(20, 20))
 
 botonSalir = tk.Button(root, text="Salir", bg="#611504",  width=17,

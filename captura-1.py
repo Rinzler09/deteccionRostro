@@ -4,7 +4,7 @@ import os
 import cv2
 import imutils
 
-personName = 'MiltonPaz'
+personName = 'JonathanMarley'
 # Cambia a la ruta donde hayas almacenado Data
 dataPath = r'deteccionRostro\\empleadosGaleria'
 personPath = os.path.join(dataPath, personName)

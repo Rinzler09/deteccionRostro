@@ -2,7 +2,7 @@ import cv2
 import os
 import numpy as np
 # Cambia a la ruta donde hayas almacenado la fotos para entrenar
-empleado = "MiltonPaz"
+empleado = "JonathanMarley"
 # dataPath = os.path.join('deteccionRostro\\empleadosGaleria', empleado)
 dataPath = os.path.join('deteccionRostro\\empleadosGaleria')
 peopleList = os.listdir(dataPath)
