@@ -33,4 +33,4 @@ def guardar_empleado_en_db(usuario=None, Hora=None):
             print("Conexion cerrada")
 
 # Llamar a la función `guardar_empleado_en_db` con los argumentos requeridos
-guardar_empleado_en_db(usuario=None, Hora=None)
+guardar_empleado_en_db(usuario="", Hora="")
